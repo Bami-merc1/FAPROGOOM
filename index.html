@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAPROGOOM | Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --kings-green: #008000;
+            --kings-lime: #ccff33;
+        }
+        .bg-kings-green { background-color: var(--kings-green) !important; }
+        .bg-kings-lime { background-color: var(--kings-lime) !important; }
+        .text-kings-lime { color: var(--kings-lime) !important; }
+        
+        /* Full-screen Hero Landing Page Style */
+        .hero-landing {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/homepage.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .btn-kings-lime {
+            background-color: var(--kings-lime);
+            color: black;
+            font-weight: bold;
+            border: none;
+            padding: 12px 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-kings-lime:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--kings-green);
+            margin-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--kings-lime) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-kings-green sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3" href="#">
+                <i class="fas fa-tractor text-kings-lime"></i> FAPROGOOM
+            </a>
+            <button class="navbar-toggler border-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logistics.html">Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-white"><i class="fas fa-search fs-5"></i></a>
+                            <a href="#" class="text-white position-relative">
+                                <i class="fas fa-shopping-cart fs-5"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">0</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-landing">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-2 fw-bold mb-3">Livestock Product at an <span class="text-kings-lime">Affordable Price</span></h1>
+                    <p class="lead mb-5 fs-4">Empowering local agripreneurship through quality poultry, nutrient-rich feed, and specialized cold-chain logistics.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+                        <a href="shop.html" class="btn btn-kings-lime btn-lg">Explore Shop</a>
+                        <a href="logistics.html" class="btn btn-outline-light btn-lg">Our Logistics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100 rounded">
+                        <i class="fas fa-seedling feature-icon"></i>
+                        <h3 class="h5 fw-bold">Agripreneurship</h3>
+                        <p class="text-muted small">We support the entire value chain—from farming and processing to distribution.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100 rounded">
+                        <i class="fas fa-truck-loading feature-icon"></i>
+                        <h3 class="h5 fw-bold">Resource Mobilization</h3>
+                        <p class="text-muted small">Coordinating materials, people, and logistics to achieve maximum farm output[cite: 69, 216].</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100 rounded">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <h3 class="h5 fw-bold">Quality Orientation</h3>
+                        <p class="text-muted small">Dedicated to meeting standards and improving poultry health continuously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-kings-green py-5 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-1">Stay Updated</h2>
+                    <p class="mb-0 opacity-75">Subscribe to get the latest prices on birds and feed.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="input-group">
+                        <input type="email" class="form-control form-control-lg rounded-0" placeholder="Enter your email address">
+                        <button class="btn btn-kings-lime px-4 rounded-0" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-kings-lime py-4 text-center">
+        <div class="container">
+            <p class="mb-0 fw-bold">&copy; 2026 FAPROGOOM - Quality Livestock & Logistics</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
+ 
+ 
+ 
+# FAPROGOOM
+# FAPROGOOM
+# FAPROGOOM
+# FAPROGOOM
+# FAPROGOOM

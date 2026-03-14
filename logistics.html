@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAPROGOOM | Logistics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --k-green: #008000; --k-lime: #ccff33; }
+        .bg-kings-green { background-color: var(--k-green) !important; }
+        .text-kings-lime { color: var(--k-lime) !important; }
+        body { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/backgroung image.jpeg');
+            background-size: cover; background-attachment: fixed; min-height: 100vh; color: white;
+        }
+        .nav-link { color: white !important; font-weight: 600; }
+        .logistics-box { background: rgba(255,255,255,0.1); border: 1px solid var(--k-lime); backdrop-filter: blur(5px); }
+
+        /* Full-screen Hero Landing Page Style */
+        .hero-landing {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/homepage.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .btn-kings-lime {
+            background-color: var(--kings-lime);
+            color: black;
+            font-weight: bold;
+            border: none;
+            padding: 12px 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-kings-lime:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--kings-green);
+            margin-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--kings-lime) !important;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-kings-green sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3" href="#">
+                <i class="fas fa-tractor text-kings-lime"></i> FAPROGOOM
+            </a>
+            <button class="navbar-toggler border-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logistics.html">Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-white"><i class="fas fa-search fs-5"></i></a>
+                            <a href="#" class="text-white position-relative">
+                                <i class="fas fa-shopping-cart fs-5"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">0</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 text-center">
+        <h1 class="display-4 fw-bold mb-4">Supply Chain & <span class="text-kings-lime">Logistics</span></h1>
+        <p class="lead mb-5">Specialized door-step delivery for agricultural inputs and live birds.</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="p-5 logistics-box rounded-4">
+                    <i class="fas fa-truck-moving fa-4x text-kings-lime mb-4"></i>
+                    <h3>Cold-Chain Delivery</h3>
+                    <p class="opacity-75">We maintain temperature control for frozen products and vaccines from our warehouse to your door.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-5 logistics-box rounded-4">
+                    <i class="fas fa-shield-alt fa-4x text-kings-lime mb-4"></i>
+                    <h3>Safe Bird Handling</h3>
+                    <p class="opacity-75">Our logistics team is trained in the humane and stress-free transport of live poultry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-kings-lime py-4 text-center">
+        <div class="container">
+            <p class="mb-0 fw-bold">&copy; 2026 FAPROGOOM - Quality Livestock & Logistics</p>
+        </div>
+    </footer>
+
+</body>
+</html>
