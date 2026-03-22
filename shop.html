@@ -1,127 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAPROGOOM | Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root { --k-green: #008000; --k-lime: #ccff33; }
-        .bg-kings-green { background-color: var(--k-green) !important; }
-        .bg-kings-lime { background-color: var(--k-lime) !important; }
-        .text-kings-lime { color: var(--k-lime) !important; }
-        body { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/backgroung image.jpeg');
-            background-size: cover; background-attachment: fixed; min-height: 100vh;
-        }
-        .nav-link { color: white !important; font-weight: 600; }
-        .nav-link:hover, .nav-link.active { color: var(--k-lime) !important; }
-        .product-card { border: none; transition: transform 0.3s; background: rgba(255,255,255,0.95); }
-        .product-card:hover { transform: translateY(-10px); border: 2px solid var(--k-lime); }
-
-        /* Full-screen Hero Landing Page Style */
-        .hero-landing {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('images/homepage.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .btn-kings-lime {
-            background-color: var(--kings-lime);
-            color: black;
-            font-weight: bold;
-            border: none;
-            padding: 12px 30px;
-            transition: all 0.3s;
-        }
-
-        .btn-kings-lime:hover {
-            background-color: white;
-            transform: translateY(-3px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--kings-green);
-            margin-bottom: 1rem;
-        }
-
-        .nav-link {
-            color: white !important;
-            font-weight: 600;
-            margin: 0 10px;
-        }
-
-        .nav-link:hover {
-            color: var(--kings-lime) !important;
-        }
-
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-kings-green sticky-top shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white fs-3" href="#">
-                <i class="fas fa-tractor text-kings-lime"></i> FAPROGOOM
-            </a>
-            <button class="navbar-toggler border-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logistics.html">Logistics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <div class="d-flex gap-3">
-                            <a href="#" class="text-white"><i class="fas fa-search fs-5"></i></a>
-                            <a href="#" class="text-white position-relative">
-                                <i class="fas fa-shopping-cart fs-5"></i>
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">0</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container py-5">
-        <h2 class="text-center text-white fw-bold mb-5">Premium Farm Products</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card product-card h-100 p-3 text-center">
-                    <i class="fas fa-snowflake fa-3x mb-3 text-info"></i>
-                    <h4 class="fw-bold">Frozen Chicken</h4>
-                    <p class="text-muted small">Processed and chilled under strict hygiene.</p>
-                    <button class="btn bg-kings-green text-white fw-bold mt-auto hover-lime">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card product-card h-100 p-3 text-center border-lime">
-                    <i class="fas fa-syringe fa-3x mb-3 text-danger"></i>
-                    <h4 class="fw-bold">Vaccines & Drugs</h4>
-                    <p class="text-muted small">Poultry health essentials for your flock.</p>
-                    <button class="btn bg-kings-green text-white fw-bold mt-auto">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card product-card h-100 p-3 text-center">
-                    <i class="fas fa-kiwi-bird fa-3x mb-3 text-warning"></i>
-                    <h4 class="fw-bold">3-Week Birds</h4>
-                    <p class="text-muted small">Healthy, pre-vaccinated and ready for growth.</p>
-                    <button class="btn bg-kings-green text-white fw-bold mt-auto">Add to Cart</button>
-                </div>
-            </div>
-        </div>
+<div class="row g-4" id="product-list">
     </div>
-</body>
-</html>
+
+<script>
+async function fetchProducts() {
+    try {
+        const response = await fetch('get_products.php');
+        const products = await response.json();
+        const list = document.getElementById('product-list');
+
+        list.innerHTML = products.map(p => `
+            <div class="col-md-4">
+                <div class="card product-card h-100 p-3 text-center">
+                    <i class="fas ${p.image_icon} fa-3x mb-3 text-info"></i>
+                    <h4 class="fw-bold">${p.name}</h4>
+                    <p class="text-muted small">${p.description}</p>
+                    <p class="fw-bold text-success">₦${parseFloat(p.price).toLocaleString()}</p>
+                    <button class="btn bg-kings-green text-white fw-bold mt-auto">Add to Cart</button>
+                </div>
+            </div>
+        `).join('');
+    } catch (err) {
+        document.getElementById('product-list').innerHTML = "<p class='text-white'>Error connecting to server.</p>";
+    }
+}
+fetchProducts();
+</script>
