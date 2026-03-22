@@ -4,8 +4,13 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $host = "localhost";
 $db_name = "faprogoom_db";
+<<<<<<< HEAD
 $username = "root"; // Default for XAMPP
 $password = "";     // Default for XAMPP
+=======
+$username = "root";
+$password = "";
+>>>>>>> 98221e6 (re-edit of the revious commit)
 
 try {
     $conn = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);

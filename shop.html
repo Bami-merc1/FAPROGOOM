@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row g-4" id="product-list">
     </div>
 
@@ -25,3 +26,84 @@ async function fetchProducts() {
 }
 fetchProducts();
 </script>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAPROGOOM | Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --kings-green: #008000; --kings-lime: #ccff33; }
+        .bg-kings-green { background-color: var(--kings-green) !important; }
+        .text-kings-lime { color: var(--kings-lime) !important; }
+        body { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/backgroung image.jpeg');
+            background-size: cover; background-attachment: fixed; min-height: 100vh; color: white;
+        }
+        .product-card { transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR (same as all pages) -->
+    <nav class="navbar navbar-expand-lg bg-kings-green sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3" href="#"><i class="fas fa-tractor text-kings-lime"></i> FAPROGOOM</a>
+            <button class="navbar-toggler border-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logistics.html">Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="display-4 fw-bold text-center mb-5 text-white">Our Shop</h1>
+        <div class="row g-4" id="product-list"></div>
+    </div>
+
+    <footer class="bg-kings-lime py-4 text-center">
+        <div class="container">
+            <p class="mb-0 fw-bold">&copy; 2026 FAPROGOOM - Quality Livestock & Logistics</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    async function fetchProducts() {
+        try {
+            const response = await fetch('get_products.php');
+            const products = await response.json();
+            const list = document.getElementById('product-list');
+
+            list.innerHTML = products.map(p => `
+                <div class="col-md-4">
+                    <div class="card product-card h-100 shadow">
+                        <img src="${p.image_icon}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="${p.name}">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h4 class="fw-bold">${p.name}</h4>
+                            <p class="text-muted small flex-grow-1">${p.description}</p>
+                            <p class="fw-bold text-success fs-5">₦${parseFloat(p.price).toLocaleString()}</p>
+                            <button class="btn bg-kings-green text-white fw-bold mt-auto">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        } catch (err) {
+            document.getElementById('product-list').innerHTML = `<p class="text-center text-white">Error loading products.</p>`;
+        }
+    }
+    fetchProducts();
+    </script>
+</body>
+</html>
+>>>>>>> 98221e6 (re-edit of the revious commit)
